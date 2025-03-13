@@ -32,14 +32,12 @@ ENV/
 *.swo
 
 # Project specific
-.env
 output/
 *.mp4
 *.gif
-*.avi
-*.mov
-*.wmv
-
-# Logs
+.env
 *.log
-logs/ 
+
+# OS specific
+.DS_Store
+Thumbs.db 
