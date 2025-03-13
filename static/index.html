@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Video Dialogue Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card main-card">
+                    <div class="card-header text-center">
+                        <h1 class="mb-0">Pet Video Dialogue Generator</h1>
+                        <p class="text-muted">Transform your pet videos with AI-generated dialogue</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Upload Form -->
+                        <div id="upload-section" class="mb-4">
+                            <h3><i class="fas fa-upload"></i> Upload Pet Video</h3>
+                            <p>Upload a video of your pet, and we'll overlay it with AI-generated dialogue based on their body language.</p>
+                            
+                            <form id="upload-form" class="mt-3">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="video-file" class="form-label">Video File</label>
+                                            <input type="file" class="form-control" id="video-file" accept="video/mp4,video/x-m4v,video/*" required>
+                                            <div class="form-text">Supported formats: MP4, AVI, MOV (max 100MB)</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="animal-type" class="form-label">Animal Type</label>
+                                            <select class="form-select" id="animal-type">
+                                                <option value="auto" selected>Auto-detect</option>
+                                                <option value="dog">Dog</option>
+                                                <option value="cat">Cat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="personality" class="form-label">Personality Trait</label>
+                                            <select class="form-select" id="personality">
+                                                <option value="auto" selected>Auto-adapt</option>
+                                                <option value="enthusiastic">Enthusiastic</option>
+                                                <option value="sassy">Sassy</option>
+                                                <option value="dramatic">Dramatic</option>
+                                                <option value="philosophical">Philosophical</option>
+                                                <option value="sarcastic">Sarcastic</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="display-mode" class="form-label">Display Mode</label>
+                                            <select class="form-select" id="display-mode">
+                                                <option value="speech_bubble" selected>Speech Bubble</option>
+                                                <option value="caption">Caption</option>
+                                                <option value="both">Both</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Developer Testing Features (hidden by default) -->
+                                <div class="row mb-3" id="developer-options" style="display: none;">
+                                    <div class="col-md-12">
+                                        <div class="card bg-light">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Testing Options</h5>
+                                                <p class="card-text">These options are for development and testing only.</p>
+                                                
+                                                <div class="mb-3">
+                                                    <label for="forced-state" class="form-label">Force Behavior State</label>
+                                                    <select class="form-select" id="forced-state">
+                                                        <option value="" selected>None (Use detected state)</option>
+                                                        <option value="excited">Excited</option>
+                                                        <option value="anxious">Anxious</option>
+                                                        <option value="curious">Curious</option>
+                                                        <option value="playful">Playful</option>
+                                                        <option value="relaxed">Relaxed</option>
+                                                        <option value="alert">Alert</option>
+                                                        <option value="angry">Angry</option>
+                                                        <option value="aggressive">Aggressive</option>
+                                                    </select>
+                                                    <div class="form-text">Override the detected behavior with a specific state (useful for testing dialogues)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Show developer options button (At the bottom of the form) -->
+                                <div class="text-end mb-3">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="toggle-dev-options">
+                                        <i class="fas fa-wrench me-1"></i> Toggle Testing Options
+                                    </button>
+                                </div>
+                                
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-magic me-2"></i> Process Video
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Processing Section -->
+                        <div id="processing-section" class="mb-4" style="display: none;">
+                            <h3><i class="fas fa-spinner fa-spin"></i> Processing Video</h3>
+                            <p>Please wait while we analyze your pet's body language and generate dialogue...</p>
+                            
+                            <div class="progress mt-3 mb-3">
+                                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                            </div>
+                            
+                            <div class="processing-details mt-3">
+                                <div><strong>Task ID:</strong> <span id="task-id">-</span></div>
+                                <div><strong>Status:</strong> <span id="task-status">Processing</span></div>
+                                <div><strong>Elapsed Time:</strong> <span id="elapsed-time">0s</span></div>
+                            </div>
+                            
+                            <div class="d-grid gap-2 mt-3">
+                                <button id="cancel-btn" class="btn btn-danger">
+                                    <i class="fas fa-times me-2"></i> Cancel Processing
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Results Section -->
+                        <div id="results-section" class="mb-4" style="display: none;">
+                            <h3><i class="fas fa-check-circle"></i> Processing Complete</h3>
+                            <p>Your pet video has been processed successfully! Preview it below or download the full video.</p>
+                            
+                            <!-- Basic video container with explicit dimensions and styling -->
+                            <div id="video-container" class="mt-3 mb-3" style="width: 100%; max-width: 640px; height: auto; margin: 0 auto; background-color: black; border-radius: 8px; overflow: hidden; position: relative;">
+                                <!-- Video will be created here with proper styling -->
+                            </div>
+                            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Completely revised video creation function
+                                    window.createFreshVideo = function(videoUrl) {
+                                        console.log('Creating video with URL:', videoUrl);
+                                        
+                                        // Get container and reset it
+                                        const container = document.getElementById('video-container');
+                                        container.innerHTML = '';
+                                        
+                                        // Force a reflow before adding the video
+                                        void container.offsetWidth;
+                                        
+                                        // Create direct video element with carefully crafted styles
+                                        const video = document.createElement('video');
+                                        
+                                        // Set critical display properties
+                                        video.style.cssText = `
+                                            display: block;
+                                            width: 100%;
+                                            height: auto;
+                                            max-height: 480px;
+                                            background-color: #000;
+                                            object-fit: contain;
+                                            border-radius: 6px;
+                                        `;
+                                        
+                                        // Set all other attributes
+                                        video.id = 'result-video';
+                                        video.controls = true;
+                                        video.autoplay = true;
+                                        video.playsInline = true;
+                                        video.muted = false;
+                                        
+                                        // Add source
+                                        const source = document.createElement('source');
+                                        source.src = videoUrl + '&t=' + new Date().getTime(); // Add extra cache buster
+                                        source.type = 'video/mp4';
+                                        video.appendChild(source);
+                                        
+                                        // Add to container
+                                        container.appendChild(video);
+                                        
+                                        // Multiple event listeners for different loading stages
+                                        video.addEventListener('loadeddata', () => {
+                                            console.log('Video data loaded');
+                                            container.classList.remove('loading');
+                                        });
+                                        
+                                        video.addEventListener('loadedmetadata', () => {
+                                            console.log('Video metadata loaded');
+                                            // Force a repaint by briefly hiding and showing
+                                            video.style.opacity = '0';
+                                            setTimeout(() => { video.style.opacity = '1'; }, 10);
+                                        });
+                                        
+                                        video.addEventListener('canplay', () => {
+                                            video.play().catch(error => {
+                                                console.log('Auto-play prevented:', error);
+                                            });
+                                        });
+                                        
+                                        video.addEventListener('error', (e) => {
+                                            console.error('Video error:', e);
+                                        });
+                                        
+                                        return video;
+                                    };
+                                });
+                            </script>
+                            
+                            <div class="processing-results mt-3">
+                                <div><strong>Animal Type:</strong> <span id="result-animal-type">-</span></div>
+                                <div><strong>Personality:</strong> <span id="result-personality">-</span></div>
+                                <div><strong>Display Mode:</strong> <span id="result-display-mode">-</span></div>
+                            </div>
+                            
+                            <div class="d-flex gap-2 mt-3">
+                                <a id="download-btn" href="#" class="btn btn-success flex-grow-1">
+                                    <i class="fas fa-download me-2"></i> Download Video
+                                </a>
+                                <button id="process-new-btn" class="btn btn-primary flex-grow-1">
+                                    <i class="fas fa-plus me-2"></i> Process Another Video
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Error Section -->
+                        <div id="error-section" class="mb-4" style="display: none;">
+                            <h3><i class="fas fa-exclamation-triangle"></i> Processing Error</h3>
+                            <p>There was an error processing your video:</p>
+                            
+                            <div class="alert alert-danger mt-3" id="error-message">
+                                An unknown error occurred.
+                            </div>
+                            
+                            <div class="d-grid gap-2 mt-3">
+                                <button id="retry-btn" class="btn btn-warning">
+                                    <i class="fas fa-redo me-2"></i> Try Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer text-center">
+                        <p class="mb-0">
+                            <small class="text-muted">
+                                For entertainment purposes only. The dialogue generated is not a reflection of what your pet is actually thinking.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Features Section -->
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3 class="card-title">How It Works</h3>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <h4>Pose Detection</h4>
+                                    <p>Advanced AI analyzes your pet's poses and body language frame-by-frame</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h4>Behavior Analysis</h4>
+                                    <p>Interprets your pet's behavior and emotional state from their body language</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </div>
+                                    <h4>Dialogue Generation</h4>
+                                    <p>Creates humorous dialogue matching your pet's behavior and personality</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="card mt-4 mb-5">
+                    <div class="card-body">
+                        <h3 class="card-title">Frequently Asked Questions</h3>
+                        
+                        <div class="accordion mt-3" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        What types of videos work best?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The best videos are well-lit with your pet clearly visible and not obscured. We recommend videos where your pet is active and their face, tail, and body are visible. Videos should be at least 720p resolution for best results.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What do the different personality traits do?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Auto-adapt:</strong> Automatically chooses personality based on your pet's behavior</li>
+                                            <li><strong>Enthusiastic:</strong> Excited, high-energy, positive dialogue</li>
+                                            <li><strong>Sassy:</strong> Witty, somewhat sarcastic, and confident dialogue</li>
+                                            <li><strong>Dramatic:</strong> Exaggerated emotions and theatrical dialogue</li>
+                                            <li><strong>Philosophical:</strong> Deep thoughts and contemplative dialogue</li>
+                                            <li><strong>Sarcastic:</strong> Dry humor and ironic observations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How long does processing take?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Processing time depends on the length and resolution of your video. Typically, it takes about 1-2 times the duration of your video. For example, a 30-second video might take 30-60 seconds to process.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 

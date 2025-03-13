@@ -1,0 +1,201 @@
+{
+  "dog": {
+    "excited": [
+      "OMG OMG OMG! Is that a SQUIRREL?! I must investigate immediately!",
+      "HELLO HELLO HELLO! I love you more than I did 5 seconds ago!",
+      "My tail is going so fast it might achieve liftoff! Woooooo!",
+      "BALL! BALL! BALL! Nothing else in the universe matters right now!",
+      "Walkies?! Did someone say WALKIES?! Best. Day. EVER!",
+      "You're HOME! This is literally the greatest moment of my life... again!",
+      "I'm so excited I might explode into a million happy pieces!",
+      "The door! Someone's at the door! MUST ANNOUNCE WITH MAXIMUM ENTHUSIASM!",
+      "Treat? Treat? Did the treat bag just make a noise? I HEARD IT!"
+    ],
+    "anxious": [
+      "The sky is making the big booms again. I shall protect us by hiding under the bed.",
+      "That vacuum is planning something. I can sense its evil intentions.",
+      "What was that noise?! I better bark at it for the next 20 minutes just to be safe.",
+      "The doorbell is ringing. This could be the end of civilization as we know it.",
+      "New person alert! Must sniff thoroughly to determine threat level!",
+      "The floor is making weird noises. I don't trust it one bit.",
+      "You're putting on shoes. Are you leaving forever? Please don't leave forever!",
+      "That plastic bag moved on its own. It's definitely alive and dangerous.",
+      "Something is different in this room. I can feel it. Must patrol extensively."
+    ],
+    "curious": [
+      "What's that smell? It smells like... something I absolutely need to roll in!",
+      "There's something behind this couch cushion. Must... dig... deeper!",
+      "I wonder what this strange object tastes like. Only one way to find out!",
+      "That corner of the yard hasn't been sniffed in at least 3 hours. Better check it!",
+      "This stick is different from yesterday's stick. Fascinating.",
+      "You're eating something new. I should inspect it closely... with my mouth.",
+      "That hole in the fence seems to have strategic importance. Must investigate.",
+      "I sense the cat was here. Need to gather more intelligence...",
+      "What's in the trash can? I bet it's something I need to examine thoroughly."
+    ],
+    "playful": [
+      "I'm going to zoom around the house at maximum speed for no apparent reason!",
+      "Let's play the game where I drop the toy at your feet and then grab it before you can!",
+      "Play bow initiated! It's legally binding - you must play with me now.",
+      "I have assumed the position. The zoomies are imminent. Please secure all breakables.",
+      "Chase me! No, I'll chase you! No, chase me! Chase me!",
+      "This toy squeaked at me. It has chosen violence. I must respond in kind.",
+      "My back end and front end are currently disagreeing on which direction to go!",
+      "I believe I can fit my entire body into this tiny space. Challenge accepted!",
+      "Let's play the game where you throw the ball and I bring back something completely different!"
+    ],
+    "relaxed": [
+      "This sunbeam is perfectly positioned for maximum nap efficiency.",
+      "I have achieved optimal belly-up position. Life is complete.",
+      "Just gonna rest my eyes for a moment... or five hours... whatever happens.",
+      "Your lap is the most comfortable place in the universe. I shall never move.",
+      "I have found the cool spot on the floor. Perfection.",
+      "Nap time is the best time. Especially when it's all the time.",
+      "I'm not sleeping, I'm just inspecting my eyelids from the inside.",
+      "The couch has accepted me as one of its own. We are bonded now.",
+      "You may think I'm lazy, but conserving energy is very important work."
+    ],
+    "alert": [
+      "Someone is approaching our territory. I must alert the entire neighborhood!",
+      "Did you hear that?! I need to investigate with extreme prejudice!",
+      "Movement detected in the front yard. Activating bark protocol.",
+      "There's a disturbance in the force. Must monitor with intense focus.",
+      "Mail carrier detected! Initiating defense sequence alpha!",
+      "My ears are at maximum height. Something is definitely happening.",
+      "I sense a strange dog nearby. Must assert dominance through intense staring.",
+      "Scanning perimeter for potential threats or treats. Both require immediate attention.",
+      "I've frozen in place because I heard something. Don't move until I give the all-clear."
+    ],
+    "hungry": [
+      "My food bowl has been empty for HOURS. This is neglect!",
+      "I can smell dinner from here. Why isn't it in my mouth yet?",
+      "The treat jar just moved. I didn't move it, but it definitely moved.",
+      "Your food smells better than mine. That seems unfair somehow.",
+      "I'm on a diet but my stomach didn't get the memo.",
+      "If I stare at my empty bowl long enough, will food magically appear?",
+      "I've been practicing my sad hungry eyes all day for this moment.",
+      "I'm pretty sure it's dinner time. Or breakfast. Or snack time. Any time, really."
+    ],
+    "tired": [
+      "All that important dog work has left me exhausted. Nap time now.",
+      "Five miles at the park means I deserve eighteen hours of sleep.",
+      "Too... tired... to... dog... anymore... today...",
+      "Being this cute is exhausting. Need to recharge.",
+      "My battery is at 2%. Emergency nap required immediately.",
+      "I've had a long day of doing absolutely nothing. Time for a well-deserved rest."
+    ],
+    "affectionate": [
+      "You are my favorite human in the whole wide world!",
+      "I would protect you with my life, but first I need belly rubs.",
+      "If love was visible, you wouldn't be able to see me through all the hearts.",
+      "You're the best thing that ever happened to me, besides food.",
+      "If I could wag my tail any faster, I would achieve liftoff.",
+      "Your lap is my happy place. I'm never leaving."
+    ]
+  },
+  "cat": {
+    "excited": [
+      "It's 3 AM. Time for my championship sprinting event across your face!",
+      "I've been waiting ALL DAY to show you this dead bug I found!",
+      "The red dot has returned! This time I WILL catch it!",
+      "I can see the bottom of my food bowl. This is a CATASTROPHE!",
+      "Fresh catnip! Time to lose all my dignity!",
+      "A box! A NEW box! This is the greatest day of my nine lives!",
+      "The bird is back at the window! This is not a drill, people!",
+      "My favorite toy was under the couch this WHOLE TIME!",
+      "The curtains are dancing in the breeze. They're taunting me. I must attack!"
+    ],
+    "anxious": [
+      "The vacuum cleaner is out. I'll be under the bed planning my revenge.",
+      "New person in MY territory? Unacceptable. Will observe from a distance of 20 feet.",
+      "Something moved outside the window. Might be a bird, might be impending doom.",
+      "You rearranged the furniture. I'll need 3-5 business days to adjust.",
+      "Car ride? CAR RIDE?! This is the betrayal I always feared!",
+      "The doorbell just rang. I'm going to my emergency hiding spot.",
+      "You picked me up without proper notice. This violation will not be forgotten.",
+      "The dog looked at me funny. I'm watching him closely now.",
+      "I heard a plastic bag rustle. Preparing for immediate tactical retreat."
+    ],
+    "curious": [
+      "What's in this box? I must sit in it immediately to find out.",
+      "You closed a door in MY house? This cannot stand. Must investigate.",
+      "I wonder what happens if I push this glass off the counter... for science!",
+      "This bag appears empty, but my whiskers sense otherwise. Further inspection required.",
+      "You seem to be focusing on something. I need to sit directly on it.",
+      "There's a mysterious sound coming from that drawer. I must infiltrate.",
+      "You brought home groceries. Each bag requires thorough investigation.",
+      "A new smell has entered my domain. Source must be identified and cataloged.",
+      "What's on top of the refrigerator? I need to make an expedition up there immediately."
+    ],
+    "playful": [
+      "I shall attack your feet under the blanket. The element of surprise is mine!",
+      "This paper bag has offended me. It must be destroyed with extreme prejudice.",
+      "My rear end is wiggling in preparation for a pounce of legendary proportions!",
+      "I've decided 2 AM is the perfect time for our play session. Prepare yourself!",
+      "This toy has been ignored for too long. It must be hunted and conquered!",
+      "I am speed. I am stealth. I am about to zoom around the house like a maniac.",
+      "The toy mouse has insulted my hunting prowess. It's personal now.",
+      "I challenge you to catch me as I dash madly from room to room!",
+      "My pupils are fully dilated. You know what that means... CHAOS TIME!"
+    ],
+    "relaxed": [
+      "I have claimed this sunbeam. It belongs to me now.",
+      "Your lap has been selected for my nap. Feel honored, human.",
+      "I shall now clean myself for the next three hours. Please admire my technique.",
+      "I have achieved peak loaf position. Do not disturb.",
+      "This cardboard box is the height of luxury. I shall not be taking questions.",
+      "I'm not sleeping, I'm just meditating with my eyes closed and occasionally snoring.",
+      "The warmest spot in the house has been located and occupied. Mission accomplished.",
+      "I have found the perfect position where all four paws are tucked underneath me. Perfection.",
+      "I shall now ignore everyone and everything for the next 6 hours. This is non-negotiable."
+    ],
+    "alert": [
+      "What was that noise? Everyone be quiet while I investigate with my ears.",
+      "Something moved outside. I must stare intensely at it for the next 45 minutes.",
+      "A disturbance in the force... perhaps the treat bag has been moved?",
+      "Ears activated. Eyes dilated. Tail twitching. Unknown entity detected.",
+      "I sense another cat nearby. Must look intimidating while safely inside.",
+      "Danger detected in an undisclosed location. I shall stare at the wall intensely.",
+      "I hear footsteps outside. Activating surveillance mode.",
+      "My whiskers sense a change in air pressure. Something approaches.",
+      "I've spotted movement in the corner of my eye. Let me puff up to twice my size just in case."
+    ],
+    "hungry": [
+      "I can see the bottom of my food bowl. This is clearly starvation.",
+      "It's been 23 minutes since my last meal. I might not survive much longer.",
+      "Your food looks better than mine. I should sample it just to be sure.",
+      "The treat cabinet just opened itself. At least that's what I'm telling you.",
+      "I'm on a diet but my stomach didn't get the memo.",
+      "My food bowl is only 98% full. This is clearly inadequate.",
+      "You're eating tuna and not sharing? This betrayal will not be forgotten.",
+      "My internal food clock says it's eating time, even though it's always eating time."
+    ],
+    "affectionate": [
+      "I will allow you to pet me for exactly 2.5 minutes. No more, no less.",
+      "I'm headbutting you because you're my human and I've marked you as mine.",
+      "I might look aloof, but secretly I adore you. Don't tell anyone.",
+      "Purring activated. You may continue the petting.",
+      "I've decided to grace your lap with my presence today. You're welcome.",
+      "The slow blink means I love you, but I'll deny it if you tell anyone."
+    ],
+    "judgmental": [
+      "I witnessed what you just did. I'm not impressed.",
+      "Your life choices continue to perplex and disappoint me.",
+      "I've seen better hunting skills from a three-legged turtle.",
+      "That outfit is... a choice you've made. Interesting.",
+      "I'm not judging you, but if I were, you'd be losing.",
+      "The way you operate the can opener is embarrassingly inefficient."
+    ]
+  },
+  "generic": [
+    "I'm feeling some type of way right now!",
+    "If only humans could understand what I'm thinking...",
+    "Just pet things happening over here!",
+    "Another day in the life of your furry companion!",
+    "The world looks different from down here!",
+    "Sometimes I wonder what it would be like to have opposable thumbs.",
+    "Human watching is my favorite spectator sport.",
+    "I have important pet business to attend to. Very important. Super serious.",
+    "I live here. You just pay the mortgage."
+  ]
+} 

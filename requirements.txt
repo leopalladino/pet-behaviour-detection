@@ -1,0 +1,33 @@
+# Core dependencies
+mediapipe>=0.10.0
+opencv-python>=4.7.0
+numpy>=1.23.0
+fastapi>=0.95.1
+uvicorn>=0.22.0
+python-dotenv>=1.0.0
+loguru>=0.7.0
+pydantic>=1.10.7
+websockets>=11.0.3
+httpx>=0.24.1
+requests>=2.29.0
+
+# Video processing dependencies
+python-multipart>=0.0.6  # For handling file uploads
+tqdm>=4.65.0  # For progress bars
+ffmpeg-python>=0.2.0  # For video encoding/decoding
+asyncio>=3.4.3  # For asynchronous processing
+
+# LLM dependencies
+torch>=2.0.0  # PyTorch for model inference
+transformers>=4.30.0  # Hugging Face Transformers
+accelerate>=0.26.0  # For efficient model loading
+bitsandbytes>=0.40.0  # For model quantization
+einops>=0.6.0  # Required by some models
+safetensors>=0.3.0  # For loading model weights
+sentencepiece>=0.1.99  # Required for tokenization
+protobuf>=4.25.1  # Required for model loading
+
+# Additional dependencies
+pillow>=9.5.0  # For image processing
+aiofiles>=23.1.0  # For async file operations
+python-magic>=0.4.27  # For file type detection 

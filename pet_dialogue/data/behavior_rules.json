@@ -1,0 +1,282 @@
+{
+  "dog": {
+    "excited": {
+      "features": {
+        "tail_position": {
+          "threshold": 0.4,
+          "comparison": "less",
+          "weight": 0.4
+        },
+        "spine_angle": {
+          "min": 70,
+          "max": 100,
+          "weight": 0.3
+        },
+        "ear_position": {
+          "threshold": -0.05,
+          "comparison": "less",
+          "weight": 0.3
+        },
+        "body_height": {
+          "min": 0.3,
+          "max": 0.5,
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.6
+    },
+    "anxious": {
+      "features": {
+        "tail_position": {
+          "threshold": 0.6,
+          "comparison": "greater",
+          "weight": 0.4
+        },
+        "body_height": {
+          "threshold": 0.6,
+          "comparison": "greater",
+          "weight": 0.3
+        },
+        "ear_position": {
+          "threshold": 0.1,
+          "comparison": "greater",
+          "weight": 0.3
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "curious": {
+      "features": {
+        "head_tilt": {
+          "reference": 90,
+          "deviation": 30,
+          "min_deviation": 10,
+          "weight": 0.6
+        },
+        "ear_position": {
+          "threshold": -0.05,
+          "comparison": "less",
+          "weight": 0.4
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "playful": {
+      "features": {
+        "spine_angle": {
+          "min": 120,
+          "max": 160,
+          "weight": 0.6
+        },
+        "body_height": {
+          "min": 0.4,
+          "max": 0.6,
+          "weight": 0.4
+        },
+        "tail_position": {
+          "threshold": 0.5,
+          "comparison": "less",
+          "weight": 0.3
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "relaxed": {
+      "features": {
+        "spine_angle": {
+          "min": 160,
+          "max": 180,
+          "weight": 0.5
+        },
+        "ear_position": {
+          "min": -0.05,
+          "max": 0.05,
+          "weight": 0.3
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "alert": {
+      "features": {
+        "spine_angle": {
+          "min": 80,
+          "max": 100,
+          "weight": 0.4
+        },
+        "ear_position": {
+          "threshold": -0.1,
+          "comparison": "less",
+          "weight": 0.4
+        },
+        "tail_position": {
+          "min": 0.4,
+          "max": 0.5,
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "aggressive": {
+      "features": {
+        "ear_position": {
+          "threshold": -0.2,
+          "comparison": "less",
+          "weight": 0.3
+        },
+        "body_tension": {
+          "threshold": 0.3,
+          "comparison": "greater",
+          "weight": 0.3
+        },
+        "front_stance": {
+          "threshold": -30,
+          "comparison": "less",
+          "weight": 0.2
+        },
+        "tail_position": {
+          "threshold": 0.7,
+          "comparison": "greater",
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.7
+    },
+    "angry": {
+      "features": {
+        "ear_position": {
+          "threshold": -0.15,
+          "comparison": "less",
+          "weight": 0.3
+        },
+        "body_tension": {
+          "threshold": 0.25,
+          "comparison": "greater",
+          "weight": 0.3
+        },
+        "front_stance": {
+          "threshold": -20,
+          "comparison": "less",
+          "weight": 0.2
+        },
+        "tail_position": {
+          "threshold": 0.6,
+          "comparison": "greater",
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.6
+    }
+  },
+  "cat": {
+    "excited": {
+      "features": {
+        "tail_position": {
+          "threshold": 0.4,
+          "comparison": "less",
+          "weight": 0.5
+        },
+        "ear_position": {
+          "threshold": -0.05,
+          "comparison": "less",
+          "weight": 0.5
+        }
+      },
+      "min_confidence": 0.6
+    },
+    "anxious": {
+      "features": {
+        "spine_angle": {
+          "min": 110,
+          "max": 150,
+          "weight": 0.4
+        },
+        "ear_position": {
+          "threshold": 0.1,
+          "comparison": "greater",
+          "weight": 0.4
+        },
+        "tail_position": {
+          "threshold": 0.6,
+          "comparison": "greater",
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "curious": {
+      "features": {
+        "ear_position": {
+          "threshold": -0.05,
+          "comparison": "less",
+          "weight": 0.5
+        },
+        "tail_position": {
+          "threshold": 0.4,
+          "comparison": "less",
+          "weight": 0.3
+        },
+        "head_tilt": {
+          "min": 80,
+          "max": 100,
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "playful": {
+      "features": {
+        "body_height": {
+          "threshold": 0.5,
+          "comparison": "greater",
+          "weight": 0.4
+        },
+        "tail_movement": {
+          "threshold": 0.5,
+          "comparison": "greater",
+          "weight": 0.4
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "relaxed": {
+      "features": {
+        "spine_angle": {
+          "min": 160,
+          "max": 180,
+          "weight": 0.5
+        },
+        "tail_position": {
+          "min": 0.4,
+          "max": 0.6,
+          "weight": 0.3
+        },
+        "ear_position": {
+          "min": -0.05,
+          "max": 0.05,
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.5
+    },
+    "alert": {
+      "features": {
+        "spine_angle": {
+          "min": 80,
+          "max": 100,
+          "weight": 0.4
+        },
+        "ear_position": {
+          "threshold": -0.1,
+          "comparison": "less",
+          "weight": 0.4
+        },
+        "tail_position": {
+          "min": 0.45,
+          "max": 0.55,
+          "weight": 0.2
+        }
+      },
+      "min_confidence": 0.5
+    }
+  }
+} 
