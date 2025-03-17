@@ -1,6 +1,11 @@
 # Pet Behavior Detection & Dialogue Generation  
 
-Add humorous dialogue to pet videos using pose detection and AI.  
+Generate humorous pet "thoughts" by analyzing their body language using MediaPipe pose detection and TinyLlama-1.1B-Chat. The system detects key points like ears, tail, and body posture to classify your pet's emotional state (e.g., excited, curious, relaxed), then generates contextual dialogue matching their behavior and chosen personality.
+
+Features:
+- Real-time pose detection using MediaPipe
+- Rule-based behavior classification from pet body language
+- Natural dialogue generation with TinyLlama-1.1B-Chat
 
 ## Key Features  
 - 🐶 **Animal Support**: Dogs and cats (auto-detection available)  
